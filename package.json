@@ -1,5 +1,6 @@
 {
   "name": "react-practice",
+  "homepage": "https://Deepakvsk.github.io/portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +12,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://deepakvsk.github.io/portfolio",
   "dependencies": {
     "framer-motion": "^12.24.0",
     "react": "^19.2.0",
