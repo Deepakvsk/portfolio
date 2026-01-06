@@ -81,5 +81,6 @@ export default function Hero2() {
 
       </div>
     </section>
+
   );
 }
