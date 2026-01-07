@@ -9,6 +9,7 @@ import Footer from './Components/Footer'
 import Testimonials from './Components/Testimonials'
 import Hero2 from './Components/Hero2'
 import Test from './Components/Test'
+import WorkWithMe from './Components/WorkWithMe'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       {/* <Test /> */}
       {/* <Hero /> */}
       <Hero2 />
+      <WorkWithMe />
       <Testimonials />
       <About />
       <Skills />

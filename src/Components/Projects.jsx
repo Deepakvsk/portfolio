@@ -1,77 +1,112 @@
-export default function Projects() {
-    const projects = [
-        {
-            title: "Portfolio Website",
-            desc: "A modern personal portfolio showcasing projects, skills, and experience.",
-            tech: ["React", "Tailwind CSS"],
-            link: "#",
-        },
-        {
-            title: "Todo App",
-            desc: "A clean and minimal task management app with local storage support.",
-            tech: ["React", "LocalStorage"],
-            link: "#",
-        },
-        {
-            title: "Landing Page",
-            desc: "A responsive and conversion-focused landing page with modern UI.",
-            tech: ["HTML", "Tailwind CSS"],
-            link: "#",
-        },
-    ];
+import React from "react";
+import { FaLocationArrow, FaExternalLinkAlt, FaStarOfLife } from "react-icons/fa";
 
+export default function Projects() {
     return (
-        <section id="projects" className="py-28 bg-gradient-to-b from-slate-50 to-white">
+        <section className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-6">
 
-                {/* Section Header */}
-                <div className="text-center max-w-2xl mx-auto">
-                    <h2 className="text-4xl font-bold text-slate-900">
-                        Featured <span className="text-blue-600">Projects</span>
+                {/* Heading */}
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
+                        Featured Projects
                     </h2>
-                    <p className="mt-4 text-slate-600">
-                        A selection of projects that highlight my skills and experience in building modern web applications.
+                    <p className="mt-4 text-slate-500 max-w-xl mx-auto text-sm md:text-base">
+                        A selection of real-world projects showcasing my Java Full-Stack
+                        development skills.
                     </p>
                 </div>
 
-                {/* Projects Grid */}
-                <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    {projects.map((project, index) => (
-                        <div
-                            key={index}
-                            className="group bg-white rounded-2xl border border-slate-200 p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-                        >
-                            <h3 className="text-xl font-semibold text-slate-900">
-                                {project.title}
-                            </h3>
+                {/* Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-                            <p className="mt-4 text-slate-600 text-sm leading-relaxed">
-                                {project.desc}
-                            </p>
-
-                            {/* Tech Stack */}
-                            <div className="mt-6 flex flex-wrap gap-2">
-                                {project.tech.map((item, i) => (
-                                    <span
-                                        key={i}
-                                        className="text-xs font-medium px-3 py-1 rounded-full bg-blue-50 text-blue-600"
-                                    >
-                                        {item}
-                                    </span>
-                                ))}
-                            </div>
-
-                            {/* Action */}
-                            <a
-                                href={project.link}
-                                className="inline-flex items-center mt-8 text-sm font-semibold text-blue-600 group-hover:gap-2 transition-all"
-                            >
-                                View Project
-                                <span className="transition-transform group-hover:translate-x-1">→</span>
-                            </a>
+                    {/* Project 1 */}
+                    <div className="rounded-[28px] bg-white border border-slate-200 p-8 shadow-sm hover:shadow-md transition">
+                        <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mb-6">
+                            <FaStarOfLife className="text-xl" />
                         </div>
-                    ))}
+
+                        <h3 className="text-xl font-semibold text-slate-900 mb-4">
+                            Job Portal System
+                        </h3>
+
+                        <div className="flex items-center gap-6 text-sm text-slate-500 mb-8">
+                            <span className="flex items-center gap-1">
+                                <FaExternalLinkAlt className="text-slate-400" />
+                                Full Stack
+                            </span>
+                            <span className="flex items-center gap-1">
+                                <FaLocationArrow className="text-slate-400" />
+                                Java + React
+                            </span>
+                        </div>
+
+                        <button className="w-full rounded-full border border-slate-300 py-3 text-sm font-medium hover:bg-slate-100 transition">
+                            View Details
+                        </button>
+                    </div>
+
+                    {/* Project 2 (Highlighted) */}
+                    <div className="rounded-[28px] bg-gradient-to-br from-[#f6fafe] via-[#fdfcff] to-[#fff5f7] border border-slate-200 p-8 shadow-sm hover:shadow-md transition">
+                        <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center mb-6">
+                            <FaStarOfLife className="text-xl" />
+                        </div>
+
+                        <h3 className="text-xl font-semibold text-slate-900 mb-4">
+                            E-Commerce Platform
+                        </h3>
+
+                        <div className="flex items-center gap-6 text-sm text-slate-500 mb-8">
+                            <span className="flex items-center gap-1">
+                                <FaExternalLinkAlt className="text-slate-400" />
+                                Web App
+                            </span>
+                            <span className="flex items-center gap-1">
+                                <FaLocationArrow className="text-slate-400" />
+                                Spring Boot
+                            </span>
+                        </div>
+
+                        <button className="w-full rounded-full border border-slate-300 py-3 text-sm font-medium hover:bg-slate-100 transition">
+                            View Details
+                        </button>
+                    </div>
+
+                    {/* Project 3 */}
+                    <div className="rounded-[28px] bg-white border border-slate-200 p-8 shadow-sm hover:shadow-md transition">
+                        <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mb-6">
+                            <FaStarOfLife className="text-xl" />
+                        </div>
+
+                        <h3 className="text-xl font-semibold text-slate-900 mb-4">
+                            Employee Management System
+                        </h3>
+
+                        <div className="flex items-center gap-6 text-sm text-slate-500 mb-8">
+                            <span className="flex items-center gap-1">
+                                <FaExternalLinkAlt className="text-slate-400" />
+                                Backend
+                            </span>
+                            <span className="flex items-center gap-1">
+                                <FaLocationArrow className="text-slate-400" />
+                                REST APIs
+                            </span>
+                        </div>
+
+                        <button className="w-full rounded-full border border-slate-300 py-3 text-sm font-medium hover:bg-slate-100 transition">
+                            View Details
+                        </button>
+                    </div>
+
                 </div>
+
+                {/* CTA */}
+                <div className="flex justify-center mt-14">
+                    <button className="bg-slate-900 text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-slate-800 transition">
+                        View All Projects
+                    </button>
+                </div>
+
             </div>
         </section>
     );
