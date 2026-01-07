@@ -10,15 +10,16 @@ import deepak2 from '../assets/deepakfinal.png';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#f8faff] via-white to-[#fff5f7] pt-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#f8faff] via-white to-[#fff5f7] ">
       <div className="max-w-7xl mx-auto px-6 pt-5 relative">
 
         {/* Floating Background Elements */}
         <motion.span
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 3, repeat: Infinity }}
-          className="absolute top-20 left-[15%] w-4 h-4 bg-orange-400 rounded-full opacity-60"
+          className="absolute top-20 left-[17%] w-4 h-4 bg-orange-400 rounded-full opacity-60"
         />
+
         <motion.div
           animate={{ y: [0, -20, 0] }}
           transition={{ duration: 6, repeat: Infinity }}
@@ -110,13 +111,13 @@ export default function Hero() {
             className="absolute -bottom-[-20px] left-1/2 -translate-x-1/2 w-full max-w-xl bg-white/90 backdrop-blur-lg shadow-2xl rounded-full p-2 flex items-center border border-slate-100 z-30"
           >
             <div className="flex-1 px-6 border-r border-slate-100 flex items-center gap-2">
-              <span>📍</span>
+              <FaJava className='h-6 w-6' />
               <p className="text-sm">Java Full Stack Developer</p>
             </div>
 
-            <div className="flex-1 px-6 flex items-center gap-2">
-              <MdBusinessCenter />
-              <p className="text-sm">3 Years</p>
+            <div className="hidden md:inline-flex flex-1 px-6 flex items-center gap-2">
+              <MdBusinessCenter className='text-sm' />
+              <span><p className="text-sm">3 Years</p></span>
             </div>
 
             <button className="bg-slate-900 text-white p-2.5 rounded-full hover:bg-slate-800 transition-colors">
