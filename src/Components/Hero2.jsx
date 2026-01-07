@@ -1,87 +1,131 @@
+import React from 'react';
 import { motion } from "framer-motion";
-import deepak from "../assets/deepak.jpg";
-import deepak2 from "../assets/deepak2.png";
-import propic from "../assets/pro-pic.png";
 
-import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
+import { MdBusinessCenter } from "react-icons/md";
+import { CiMail } from "react-icons/ci";
+import { FaJava, FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaNodeJs, FaAws } from "react-icons/fa";
+import { SiSpringboot, SiRedux, SiJavascript, SiMysql, SiPostgresql, SiDocker, SiJenkins, SiMongodb, SiKubernetes, SiTypescript, SiNextdotjs } from "react-icons/si";
 
+import deepak2 from '../assets/deepakfinal.png';
 
-export default function Hero2() {
+export default function Hero() {
   return (
-    <section className="min-h-screen mt-16 bg-white px-[10%] overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] items-center">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#f8faff] via-white to-[#fff5f7] pt-20">
+      <div className="max-w-7xl mx-auto px-6 pt-5 relative">
 
-        {/* LEFT CONTENT */}
-        <div className="flex flex-col justify-center gap-8 h-[90vh]">
+        {/* Floating Background Elements */}
+        <motion.span
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 3, repeat: Infinity }}
+          className="absolute top-20 left-[15%] w-4 h-4 bg-orange-400 rounded-full opacity-60"
+        />
+        <motion.div
+          animate={{ y: [0, -20, 0] }}
+          transition={{ duration: 6, repeat: Infinity }}
+          className="absolute top-40 right-[10%] w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-50"
+        />
+        <motion.div
+          animate={{ y: [0, 20, 0] }}
+          transition={{ duration: 7, repeat: Infinity }}
+          className="absolute bottom-20 left-[5%] w-72 h-72 bg-pink-100 rounded-full blur-3xl opacity-50"
+        />
 
-          <motion.h3
-            initial={{ y: 250, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.2 }}
-            className="text-3xl font-semibold text-slate-800"
-          >
-            Hi, I'm Deepak Vishwakarma!
-          </motion.h3>
+        {/* Top Text Content */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-3xl mx-auto relative z-20 mb-1"
+        >
+          <p className="text-slate-900 font-medium mb-4">
+            Java Full-Stack Developer
+          </p>
 
-          <motion.h1
-            initial={{ y: 250, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.3 }}
-            className="text-[2rem] md:text-[3rem] lg:text-[5.2rem] font-extrabold uppercase tracking-[5px] text-slate-800 leading-tight"
-          >
-            Java <span className="text-purple-600">Developer</span>
-          </motion.h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 leading-tight tracking-tight">
+            Building <span className="text-black">Scalable Web Applications</span>
+          </h1>
 
-          <motion.p
-            initial={{ y: 250, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.4 }}
-            className="text-lg text-gray-500 max-w-xl leading-relaxed"
-          >
-            Emmy is a passionate and creative web designer known for crafting
-            visually stunning and user-friendly websites.
-          </motion.p>
+          <p className="mt-3 text-slate-500 max-w-xl mx-auto text-sm md:text-base pb-5">
+            I specialize in Java, Spring Boot, React, and modern web technologies to
+            deliver secure, high-performance, and scalable applications.
+          </p>
+        </motion.div>
 
-          {/* CTA BUTTONS */}
+        {/* Hero Visual Section */}
+        <div className="relative max-w-4xl mx-auto h-[500px] flex justify-center items-start mt-2">
+
+          {/* Left Floating Card */}
           <motion.div
-            initial={{ y: 250, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.5 }}
-            className="flex items-center gap-12 mt-4"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 4, repeat: Infinity }}
+            className="absolute left-[-5%] top-[15%] lg:left-[5%] bg-white/70 backdrop-blur-md shadow-2xl rounded-2xl p-5 w-48 md:w-56 -rotate-6 border border-white z-0 hidden sm:block"
           >
-            <button
-              onClick={() =>
-                document
-                  .getElementById("projects")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="flex items-center justify-center h-[50px] w-[280px] rounded-md bg-slate-800 text-white font-semibold uppercase shadow-lg hover:bg-purple-600 transition"
-              aria-label="View Projects"
-            >
-              Projects <FaCode className="ml-2" />
-            </button>
+            <div className="w-10 h-10 mb-3 flex items-center justify-around">
+              <span> <SiSpringboot className="w-10 h-10 text-green-600" /></span>
+              <p className="text-sm font-bold ml-3 text-slate-900">
+                Backend Expertise
+              </p>
+            </div>
+            <p className="mt-1 text-[11px] text-slate-500 leading-relaxed">
+              Java, Spring Boot, REST APIs, Microservices
+            </p>
+          </motion.div>
 
-            <button className="flex items-center justify-center h-[50px] w-[280px] rounded-md border-2 border-purple-600 text-purple-600 font-semibold uppercase shadow-lg hover:bg-purple-600 hover:text-white transition">
-              Hire me <FaExternalLinkAlt className="ml-2" />
+          {/* Right Floating Card */}
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+            className="absolute right-[-5%] top-[25%] lg:right-[5%] bg-white/70 backdrop-blur-md shadow-2xl rounded-2xl p-5 w-48 md:w-56 rotate-6 border border-white z-0 hidden sm:block"
+          >
+            <div className="w-10 h-10 mb-3 flex items-center justify-center">
+              <span> <FaReact className="w-20 h-10 text-cyan-500 ml-10" /></span>
+              <p className="text-sm font-bold text-slate-900">
+                Frontend Skills
+              </p>
+            </div>
+            <p className="mt-1 text-[11px] text-slate-500 leading-relaxed">
+              React, Tailwind CSS, Bootstrap Responsive UI
+            </p>
+          </motion.div>
 
+          {/* Main Image */}
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.9 }}
+            className="relative z-10 px-1"
+          >
+            <img
+              src={deepak2}
+              alt="Java Full Stack Developer"
+              className="w-[350px] max-w-[450px] drop-shadow-2xl"
+            />
+          </motion.div>
+
+          {/* Unified Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="absolute -bottom-[-20px] left-1/2 -translate-x-1/2 w-full max-w-xl bg-white/90 backdrop-blur-lg shadow-2xl rounded-full p-2 flex items-center border border-slate-100 z-30"
+          >
+            <div className="flex-1 px-6 border-r border-slate-100 flex items-center gap-2">
+              <span>📍</span>
+              <p className="text-sm">Java Full Stack Developer</p>
+            </div>
+
+            <div className="flex-1 px-6 flex items-center gap-2">
+              <MdBusinessCenter />
+              <p className="text-sm">3 Years</p>
+            </div>
+
+            <button className="bg-slate-900 text-white p-2.5 rounded-full hover:bg-slate-800 transition-colors">
+              <CiMail />
             </button>
           </motion.div>
-        </div>
 
-        {/* RIGHT IMAGE */}
-        <div className="relative h-[90vh] hidden lg:flex items-end justify-end">
-          <motion.img
-            src={propic}
-            alt="Hero"
-            initial={{ y: 250, scale: 0.85, opacity: 0 }}
-            animate={{ y: 0, scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.2 }}
-            className="w-[100%] max-w-[520px]"
-          />
         </div>
-
       </div>
     </section>
-
   );
 }

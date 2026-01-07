@@ -8,9 +8,9 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
                 {/* Logo */}
-                <h1 className="text-2xl font-bold text-slate-900">
-                    Your<span className="text-blue-600">Name</span>
-                </h1>
+                <div className="font-bold text-2xl flex items-center gap-2">
+                    <div className="w-8 h-8 bg-black rounded-lg"></div> Portfolio
+                </div>
 
                 {/* Desktop Menu */}
                 <ul className="hidden md:flex gap-8 text-slate-700 font-medium">
@@ -20,6 +20,8 @@ export default function Navbar() {
                     <li className="hover:text-blue-600 cursor-pointer">Projects</li>
                     <li className="hover:text-blue-600 cursor-pointer">Contact</li>
                 </ul>
+                <button className="bg-black text-white px-6 py-2 rounded-full text-sm font-medium">Hire Me</button>
+
 
                 {/* Hamburger Button */}
                 <button

@@ -8,12 +8,14 @@ import Contact from './Components/Contact'
 import Footer from './Components/Footer'
 import Testimonials from './Components/Testimonials'
 import Hero2 from './Components/Hero2'
+import Test from './Components/Test'
 
 function App() {
 
   return (
     <div className="min-h-screen bg-slate-50">
       <Navbar />
+      {/* <Test /> */}
       {/* <Hero /> */}
       <Hero2 />
       <Testimonials />
