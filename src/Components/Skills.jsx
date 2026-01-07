@@ -11,7 +11,7 @@ export default function Skills() {
         { name: "JavaScript", icon: <SiJavascript className="w-10 h-10 text-yellow-400" /> },
         { name: "TypeScript", icon: <SiTypescript className="w-10 h-10 text-blue-700" /> },
         { name: "HTML5", icon: <FaHtml5 className="w-10 h-10 text-orange-500" /> },
-        { name: "CSS3", icon: <FaCss3Alt className="w-10 h-10 text-blue-500" /> },
+        // { name: "CSS3", icon: <FaCss3Alt className="w-10 h-10 text-blue-500" /> },
         { name: "Node.js", icon: <FaNodeJs className="w-10 h-10 text-green-700" /> },
         { name: "Git & GitHub", icon: <FaGitAlt className="w-10 h-10 text-red-600" /> },
         { name: "SQL / MySQL", icon: <SiMysql className="w-10 h-10 text-blue-700" /> },
@@ -19,7 +19,7 @@ export default function Skills() {
         { name: "MongoDB", icon: <SiMongodb className="w-10 h-10 text-green-600" /> },
         { name: "Docker", icon: <SiDocker className="w-10 h-10 text-blue-500" /> },
         { name: "Kubernetes", icon: <SiKubernetes className="w-10 h-10 text-blue-600" /> },
-        { name: "Jenkins", icon: <SiJenkins className="w-10 h-10 text-red-700" /> },
+        // { name: "Jenkins", icon: <SiJenkins className="w-10 h-10 text-red-700" /> },
         { name: "AWS", icon: <FaAws className="w-10 h-10 text-orange-500" /> },
     ];
 

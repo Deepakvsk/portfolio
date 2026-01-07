@@ -2,40 +2,73 @@ export default function Projects() {
     const projects = [
         {
             title: "Portfolio Website",
-            desc: "Personal portfolio built with React and Tailwind CSS."
+            desc: "A modern personal portfolio showcasing projects, skills, and experience.",
+            tech: ["React", "Tailwind CSS"],
+            link: "#",
         },
         {
             title: "Todo App",
-            desc: "Task management app with clean UI and local storage."
+            desc: "A clean and minimal task management app with local storage support.",
+            tech: ["React", "LocalStorage"],
+            link: "#",
         },
         {
             title: "Landing Page",
-            desc: "Responsive landing page with modern design."
-        }
+            desc: "A responsive and conversion-focused landing page with modern UI.",
+            tech: ["HTML", "Tailwind CSS"],
+            link: "#",
+        },
     ];
 
     return (
-        <section className="py-24 bg-slate-50" id="projects">
-            <div className="max-w-6xl mx-auto px-6">
-                <h2 className="text-4xl font-bold text-center text-slate-900">
-                    My <span className="text-blue-600">Projects</span>
-                </h2>
+        <section id="projects" className="py-28 bg-gradient-to-b from-slate-50 to-white">
+            <div className="max-w-7xl mx-auto px-6">
 
-                <div className="mt-16 grid md:grid-cols-3 gap-8">
-                    {projects.map((project, i) => (
+                {/* Section Header */}
+                <div className="text-center max-w-2xl mx-auto">
+                    <h2 className="text-4xl font-bold text-slate-900">
+                        Featured <span className="text-blue-600">Projects</span>
+                    </h2>
+                    <p className="mt-4 text-slate-600">
+                        A selection of projects that highlight my skills and experience in building modern web applications.
+                    </p>
+                </div>
+
+                {/* Projects Grid */}
+                <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    {projects.map((project, index) => (
                         <div
-                            key={i}
-                            className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition"
+                            key={index}
+                            className="group bg-white rounded-2xl border border-slate-200 p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
                         >
                             <h3 className="text-xl font-semibold text-slate-900">
                                 {project.title}
                             </h3>
-                            <p className="mt-4 text-slate-600">
+
+                            <p className="mt-4 text-slate-600 text-sm leading-relaxed">
                                 {project.desc}
                             </p>
-                            <button className="mt-6 text-blue-600 font-medium hover:underline">
-                                View Project →
-                            </button>
+
+                            {/* Tech Stack */}
+                            <div className="mt-6 flex flex-wrap gap-2">
+                                {project.tech.map((item, i) => (
+                                    <span
+                                        key={i}
+                                        className="text-xs font-medium px-3 py-1 rounded-full bg-blue-50 text-blue-600"
+                                    >
+                                        {item}
+                                    </span>
+                                ))}
+                            </div>
+
+                            {/* Action */}
+                            <a
+                                href={project.link}
+                                className="inline-flex items-center mt-8 text-sm font-semibold text-blue-600 group-hover:gap-2 transition-all"
+                            >
+                                View Project
+                                <span className="transition-transform group-hover:translate-x-1">→</span>
+                            </a>
                         </div>
                     ))}
                 </div>

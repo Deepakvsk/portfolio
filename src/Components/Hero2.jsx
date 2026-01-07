@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import deepak from "../assets/deepak.jpg";
+import deepak2 from "../assets/deepak2.png";
 import propic from "../assets/pro-pic.png";
 
 import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
