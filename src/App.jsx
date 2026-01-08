@@ -20,7 +20,7 @@ function App() {
       {/* <Hero /> */}
       <Hero2 />
       <WorkWithMe />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <About />
       <Skills />
       <Projects />

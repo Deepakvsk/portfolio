@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import handshake from "../assets/handshake.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -74,7 +75,7 @@ export default function WorkWithMe() {
             <div className="h-[260px] rounded-[28px] bg-gradient-to-br from-[#f6fafe] via-[#fdfcff] to-[#fff5f7] p-3 border border-slate-100 flex items-center justify-center mb-6">
               <div className="w-full h-full rounded-2xl bg-white flex items-center justify-center overflow-hidden">
                 <img
-                  src="https://media.istockphoto.com/id/1313291590/vector/two-hands-handshake-abstract-illustration-isolated-on-white-background-low-poly-wireframe.jpg?s=612x612&w=0&k=20&c=-B0a9aE7l5Ce-1WAG0kM02q1XEOYHdCBSIZw5x8vW8k="
+                  src={handshake}
                   alt="Collaboration"
                   className="w-full h-full object-cover"
                 />

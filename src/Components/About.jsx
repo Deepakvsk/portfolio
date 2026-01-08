@@ -1,65 +1,108 @@
+import aiHand from "../assets/ai-hand.png";
+
 export default function About() {
-    const skills = [
-        {
-            title: "Backend Development",
-            desc: "Building robust and scalable backend systems using Java, Spring Boot, and RESTful APIs.",
-        },
-        {
-            title: "Enterprise Applications",
-            desc: "Experience in developing enterprise-grade applications with clean architecture and best practices.",
-        },
-        {
-            title: "Database & Performance",
-            desc: "Designing efficient database schemas, writing optimized queries, and improving application performance.",
-        },
-        {
-            title: "Code Quality & Testing",
-            desc: "Writing clean, maintainable code with unit testing, logging, and proper error handling.",
-        },
-    ];
-
     return (
-        <section className="py-28 bg-white" id="about">
-            <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+        <section
+            id="about"
+            className="relative py-32 overflow-hidden
+      bg-gradient-to-br from-[#f8faff] via-white to-[#fff5f7]"
+        >
+            {/* Floating Gradient Orbs */}
+            <div
+                className="absolute top-24 left-[10%] w-72 h-72 rounded-full
+        bg-pink-200/40 blur-3xl"
+                style={{ animation: "float 10s ease-in-out infinite" }}
+            />
 
-                {/* Left Content */}
+            <div
+                className="absolute bottom-32 left-[35%] w-64 h-64 rounded-full
+        bg-orange-200/40 blur-3xl"
+                style={{ animation: "float 12s ease-in-out infinite" }}
+            />
+
+            <div
+                className="absolute top-32 right-[20%] w-80 h-80 rounded-full
+        bg-purple-200/30 blur-3xl"
+                style={{ animation: "float 14s ease-in-out infinite" }}
+            />
+
+            {/* AI Hand Background */}
+            <div
+                className="absolute top-1/2 right-[-160px] hidden md:block
+            w-[760px] h-[760px] opacity-[0.5] pointer-events-none"
+                style={{
+                    backgroundImage: `url(${aiHand})`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "contain",
+                    transform: "translateY(-50%)",
+                    animation: "handFloat 18s ease-in-out infinite",
+                }}
+            />
+
+
+            {/* Fade overlay */}
+            <div className="absolute inset-y-0 right-0 w-1/2
+        bg-gradient-to-l from-white via-white/70 to-transparent hidden md:block" />
+
+            {/* Content */}
+            <div className="relative max-w-7xl mx-auto px-6
+        grid lg:grid-cols-2 gap-20 items-center">
+
+                {/* Left */}
                 <div>
-                    <h2 className="text-4xl font-bold text-slate-900">
-                        About <span className="text-blue-600">Me</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
+                        About <span className="text-slate-700">Me</span>
                     </h2>
 
-                    <p className="mt-6 text-slate-600 leading-relaxed">
-                        I am a Java Developer focused on building reliable, scalable, and
-                        high-performance backend systems. I enjoy solving real-world
-                        problems by designing clean architectures and writing maintainable
-                        code that supports long-term growth.
+                    <p className="mt-6 text-slate-600 max-w-xl leading-relaxed">
+                        I’m a Java Full Stack Developer focused on building scalable,
+                        secure and high-performance applications with modern architecture.
                     </p>
 
-                    <p className="mt-4 text-slate-600 leading-relaxed">
-                        My work revolves around Java, Spring Boot, REST APIs, and database-driven
-                        applications, with a strong emphasis on performance, security, and
-                        best development practices.
+                    <p className="mt-4 text-slate-600 max-w-xl leading-relaxed">
+                        I work across Java, Spring Boot, React, REST APIs and databases
+                        with strong attention to performance and maintainability.
                     </p>
                 </div>
 
                 {/* Right Cards */}
                 <div className="grid sm:grid-cols-2 gap-8">
-                    {skills.map((skill, index) => (
+                    {[
+                        ["Backend Engineering", "Java, Spring Boot, secure APIs & microservices."],
+                        ["Frontend Integration", "React based modern & responsive interfaces."],
+                        ["Database & Performance", "Optimized SQL & NoSQL systems."],
+                        ["Code Quality", "Clean, testable & maintainable codebases."],
+                    ].map(([title, desc], i) => (
                         <div
-                            key={index}
-                            className="border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+                            key={i}
+                            className="rounded-3xl bg-white/70 backdrop-blur-lg
+              border border-slate-200 p-7
+              transition-all duration-300
+              hover:-translate-y-1 hover:shadow-xl"
                         >
                             <h3 className="text-lg font-semibold text-slate-900">
-                                {skill.title}
+                                {title}
                             </h3>
                             <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                                {skill.desc}
+                                {desc}
                             </p>
                         </div>
                     ))}
                 </div>
-
             </div>
+
+            {/* GLOBAL KEYFRAMES (REACT SAFE) */}
+            <style>{`
+  @keyframes handFloat {
+    0%, 100% {
+      transform: translateY(-50%) translateX(0) scale(1);
+    }
+    50% {
+      transform: translateY(calc(-50% - 10px)) translateX(-10px) scale(1.03);
+    }
+  }
+`}</style>
+
         </section>
     );
 }
