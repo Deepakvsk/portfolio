@@ -3,7 +3,7 @@ import { FaLocationArrow, FaExternalLinkAlt, FaStarOfLife } from "react-icons/fa
 
 export default function Projects() {
     return (
-        <section className="py-24 bg-white">
+        <section id="projects" className="py-24 bg-white scroll-mt-20">
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Heading */}

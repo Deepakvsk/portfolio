@@ -1,9 +1,23 @@
 import { useState } from "react";
 import { SiLintcode } from "react-icons/si";
 
-
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+
+    // NAV ITEMS
+    const navItems = [
+        { name: "Home", id: "home" },
+        { name: "About", id: "about" },
+        { name: "Skills", id: "skills" },
+        { name: "Projects", id: "projects" },
+        { name: "Contact", id: "contact" },
+    ];
+
+    // SCROLL FUNCTION
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        element?.scrollIntoView({ behavior: "smooth" });
+    };
 
     return (
         <>
@@ -13,18 +27,21 @@ export default function Navbar() {
 
                     {/* Logo */}
                     <div className="font-bold text-xl sm:text-2xl flex items-center gap-2">
-                        {/* <div className="w-8 h-8 bg-black rounded-lg">
-                        </div> */}
-                        <SiLintcode className="w-8 h-8" /> Portfolio
+                        <SiLintcode className="w-8 h-8" />
+                        Portfolio
                     </div>
 
                     {/* Desktop Menu */}
                     <ul className="hidden md:flex gap-8 text-slate-700 font-medium">
-                        <li className="hover:text-orange-600 cursor-pointer">Home</li>
-                        <li className="hover:text-orange-600 cursor-pointer">About</li>
-                        <li className="hover:text-orange-600 cursor-pointer">Skills</li>
-                        <li className="hover:text-orange-600 cursor-pointer">Projects</li>
-                        <li className="hover:text-orange-600 cursor-pointer">Contact</li>
+                        {navItems.map((item) => (
+                            <li
+                                key={item.id}
+                                onClick={() => scrollToSection(item.id)}
+                                className="hover:text-orange-600 cursor-pointer"
+                            >
+                                {item.name}
+                            </li>
+                        ))}
                     </ul>
 
                     {/* Desktop Hire Button */}
@@ -32,26 +49,42 @@ export default function Navbar() {
                         Hire Me
                     </button>
 
-                    {/* Hamburger Button (Mobile only) */}
+                    {/* Hamburger Button (Mobile) */}
                     <button
                         className="md:hidden flex flex-col gap-1.5"
                         onClick={() => setIsOpen(!isOpen)}
                         aria-label="Toggle menu"
                     >
-                        <span className={`block h-0.5 w-6 bg-slate-900 transition-transform ${isOpen ? "rotate-45 translate-y-2" : ""}`} />
-                        <span className={`block h-0.5 w-6 bg-slate-900 transition-opacity ${isOpen ? "opacity-0" : "opacity-100"}`} />
-                        <span className={`block h-0.5 w-6 bg-slate-900 transition-transform ${isOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+                        <span
+                            className={`block h-0.5 w-6 bg-slate-900 transition-transform ${isOpen ? "rotate-45 translate-y-2" : ""
+                                }`}
+                        />
+                        <span
+                            className={`block h-0.5 w-6 bg-slate-900 transition-opacity ${isOpen ? "opacity-0" : "opacity-100"
+                                }`}
+                        />
+                        <span
+                            className={`block h-0.5 w-6 bg-slate-900 transition-transform ${isOpen ? "-rotate-45 -translate-y-2" : ""
+                                }`}
+                        />
                     </button>
                 </div>
 
                 {/* Mobile Menu */}
                 {isOpen && (
                     <ul className="md:hidden bg-white/95 backdrop-blur border-t border-slate-200 flex flex-col gap-4 px-6 py-4">
-                        <li className="hover:text-blue-600 cursor-pointer">Home</li>
-                        <li className="hover:text-blue-600 cursor-pointer">About</li>
-                        <li className="hover:text-blue-600 cursor-pointer">Skills</li>
-                        <li className="hover:text-blue-600 cursor-pointer">Projects</li>
-                        <li className="hover:text-blue-600 cursor-pointer">Contact</li>
+                        {navItems.map((item) => (
+                            <li
+                                key={item.id}
+                                onClick={() => {
+                                    scrollToSection(item.id);
+                                    setIsOpen(false);
+                                }}
+                                className="hover:text-blue-600 cursor-pointer"
+                            >
+                                {item.name}
+                            </li>
+                        ))}
 
                         {/* Mobile Hire Button */}
                         <button className="mt-2 bg-black text-white py-2 rounded-full text-sm font-medium">
@@ -61,7 +94,7 @@ export default function Navbar() {
                 )}
             </nav>
 
-            {/* NAVBAR SPACER (IMPORTANT FOR FIXED ISSUE) */}
+            {/* NAVBAR SPACER */}
             <div className="h-[72px]" />
         </>
     );

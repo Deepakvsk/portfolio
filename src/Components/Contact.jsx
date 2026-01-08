@@ -5,7 +5,7 @@ export default function Contact() {
         <section
             id="contact"
             className="relative py-28 overflow-hidden
-      bg-gradient-to-br from-[#fff7f9] via-white to-[#f8faff]"
+      bg-gradient-to-br from-[#fff7f9] via-white to-[#f8faff] scroll-mt-20"
         >
             {/* Soft floating SVG blobs */}
             <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#ffd6e2] rounded-full blur-3xl opacity-40 animate-pulse" />

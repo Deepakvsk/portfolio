@@ -40,7 +40,7 @@ export default function Skills() {
     ];
 
     return (
-        <section className="py-24  bg-white">
+        <section id="skills" className="py-24 bg-white scroll-mt-20">
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Heading */}

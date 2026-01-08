@@ -10,7 +10,7 @@ import deepak2 from '../assets/deepakfinal.png';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#f8faff] via-white to-[#fff5f7] ">
+    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-[#f8faff] via-white to-[#fff5f7] scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 pt-5 relative">
 
         {/* Floating Background Elements */}
